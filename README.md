@@ -51,6 +51,14 @@ These can be installed with `pip install flask gunicorn`.
 
      The above command will run a server on `http://localhost:8000` and watch for changes to Python files (default) and changes to `templates/index.html` and `static/styles.css`. Annoyingly, currently, `gunicorn` does not allow you to specify glob patterns, so you must specify each non-python file to watch for changes.
 
+   - Alternatively, you could run `Flask` with the Flask development server:
+
+     ```bash
+     flask --app main:app run --debug --extra-files templates/index.html:static/styles.css
+     ```
+
+     On Windows, use `;` to separate the `--extra-files` instead of `:`. The above command will run a server on `http://localhost:5000` and watch for changes to Python files (default) and changes to `templates/index.html` and `static/styles.css`. Annoyingly, just like with gunicorn, `flask` does not allow you to specify glob patterns, so you must specify each non-python file to watch for changes.
+
 2. Run [browser-sync](https://browsersync.io/) in watch mode, specifying the address to proxy and the static files path.
 
    ```bash
