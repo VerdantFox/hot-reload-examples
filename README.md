@@ -61,7 +61,7 @@ These can be installed with `pip install flask gunicorn`.
 
      Use `;` on Windows to separate the `--extra-files` instead of `:`. The above command will run a server on `http://localhost:5000` and watch for changes to Python files (default), `templates/index.html`, and `static/styles.css`. Annoyingly, like with gunicorn, `flask` does not allow you to specify glob patterns, so you must specify each non-python file to watch for changes.
 
-2. Run [browser-sync](https://browsersync.io/) in watch mode, specifying the address to proxy and the static files path.
+2. In a separate terminal, run [browser-sync](https://browsersync.io/) in watch mode, specifying the address to proxy and the static files path.
 
    ```bash
    browser-sync 'http://localhost:8000' 'static' --watch --files .
@@ -80,3 +80,5 @@ These can be installed with `pip install flask gunicorn`.
    3. Click "Inspect" to open dev tools
    4. Navigate to the "Network" tab
    5. Check "Disable cache"
+
+Now, you can change your Python, HTML, CSS, and JS files and see those changes reflected in the browser (`http://localhost:3000`) without refreshing the page.
